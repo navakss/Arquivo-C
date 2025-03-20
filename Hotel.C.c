@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <locale.h>
 int main() {
     setlocale(LC_ALL,"");
@@ -37,11 +38,12 @@ int main() {
     }
     }while(op<1 || op>2);
     for(;;) {
+    system("cls");
     printf("Seu checkin está completo, segue as informações:\nNome:%s\nIdade:%d\nEndereço:%s\nRG:%s\nCPF:%s\nTelefone:%s\nTempo de estadia(em dias):%d\nNúmero de pessoas:%d\n", n, i, en, rg, cpf, tl, te, p);
     printf("Ouve algum erro de informação? Reenvie o formulário:\n1.Reenviar\n2.Seguir\nR:");
     scanf("%d",&op2);
     if(op2==1) {
-    printf("Bem vindo ao Hotel Karvinsky! Para reservar um quarto preencha o formulário:\n");
+    printf("Bem vindo ao Hotel Pavan! Para reservar um quarto preencha o formulário:\n");
     printf("Informe o número de pessoas e o tempo de estadia:(em dias)\n");
     scanf("%d, %d",&p,&te);
     printf("Informe seu nome completo e sua idade:\n");
@@ -79,6 +81,7 @@ int main() {
     //Quartos
     if(p==2) {
         do{
+        system("cls");
         printf("Selecione seu quarto de casal:\n1.Quarto Casal 1\n2.Quarto Casal 2\nR: ");
         scanf("%d",&op4);
         switch(op4) {
@@ -98,6 +101,7 @@ int main() {
     
     if(p>=3 && p<=6) {
         do{
+        system("cls");
         printf("Selecione os quartos padrões:\n1.Quarto 1\n2.Quarto 2\nR: ");
         scanf("%d",&op4);
         switch(op4) {
@@ -117,6 +121,7 @@ int main() {
 
     if (p>6) {
     do{
+    	system("cls");
         printf("Selecione seu quarto de família:\n1.Quarto Família 1\n2.Quarto Família 2\n3.Quarto Família 3\nR: ");
         scanf("%d",&op4);
         switch(op4) {
@@ -140,6 +145,7 @@ int main() {
 
     if (p==1) {
         do{
+        system("cls");
         printf("Selecione os quartos solos:\n1.Quarto Solo 1\n2.Quarto Solo 2\n3.Quarto Solo 3\nR: ");
         scanf("%d",&op4);
         switch(op4) {
@@ -165,6 +171,9 @@ int main() {
     
     //Menu
     do{
+	
+    do{
+    system("cls");
     printf("Selecione uma das funções abaixo:\n1.Solicitar serviço de quarto\n2.Fazer pedido\n3.Sair\nR: ");
     scanf("%d",&op3);
     if(op3<1 || op3>3); {
@@ -174,6 +183,7 @@ int main() {
     //Serviço de Quarto
     if(op3==1) {
         do{
+        system("cls");
         printf("Selecione os serviços:\n1.Manutenção\n2.Limpeza\n3.Camareira\nR: ");
         scanf("%d", &op5);
     switch(op5) {
@@ -193,6 +203,7 @@ int main() {
         printf("Seu serviço: %s foi solicitado no %s(seu quarto)", s, q);
     }
     else if(op3==2) {
+    	system("cls");
         printf("Cardápio:\n1.Café da Manhã\n2.Almoço\n3.Jantar\n4.Bebidas\n5.Sobremesas\nR: ");
         scanf("%d", &op5);
         switch(op5) {
@@ -212,19 +223,23 @@ int main() {
                 printf("Cardápio Jantar:\n1.Macarrão\n2.Arroz Feijão e Carne\n");
                 scanf("%d",&op9);
                 printf("Seu jantar será servido.");
+                break;
                 
                 case 4:
                 printf("Cardápio Bebidas:\n1.Suco\n2.Refrigerante\n3.Água\nR:" );
                 scanf("%d",&op10);
                 printf("Sua bebida será servida.");
+                break;
                 
                 case 5:
                 printf("Calendário Sobremesas:\n1.Sorvete\n2.Gelatina\n3.Bolo\nR: ");
                 scanf("%d",&op11);
                 printf("Sua sobremesa será servida.");
+                break;
         }
     }
-    else if(op3==3); {
+}while(op3!=3);
+    if(op3==3); {
         return 1;
     }
     if(op3<1 || op3>3) {
